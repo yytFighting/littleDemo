@@ -2,10 +2,11 @@ import React from "react";
 import { Input } from "antd";
 import { Button } from "antd";
 import "../App.scss";
-import {PlusCircleFilled} from '@ant-design/icons'
+import {PlusCircleFilled,LeftOutlined,CloseOutlined} from '@ant-design/icons'
 import {EditFilled } from '@ant-design/icons'
 import {CheckOutlined} from '@ant-design/icons'
 import {CloseCircleFilled} from '@ant-design/icons'
+
 class Add extends React.Component {
   constructor() {
     super();
@@ -39,6 +40,7 @@ class Add extends React.Component {
   }
 
   render() {
+    // var abc=<div></div>
     var items = [];
     for (var i = 0; i < 7; i++) {
       items.push(
@@ -69,7 +71,7 @@ class Add extends React.Component {
           e.stopPropagation();
         }}
       >
-        <div className="itemhead">添加标签</div>
+        <div className="itemhead"><LeftOutlined className="headbt1" onClick={()=>this.toback()}/>编辑标签<CloseOutlined className="headbt2" onClick={()=>this.toclose()}/></div>
         <div className="iteminput">
           <Input
             placeholder="Basic usage"
@@ -130,7 +132,7 @@ class Add extends React.Component {
     );
     var outtagpage = (
       <div onClick={(e) => this.show(e)} className="addtag">
-        <Input
+        <Input className="btaddtag"
           placeholder="Basic usage"
           value={this.state.selectmsg}
           onChange={(e) => this.selectmsgchange(e)}
@@ -146,7 +148,7 @@ class Add extends React.Component {
             if(item.isadd){
               return true
             }
-          })?<PlusCircleFilled style={{fontSize:"25px"}} onClick={(e) => this.addCom(e)} className="btadd"/>:<div onClick={(e) => this.addCom(e)}>添加标签</div>
+          })?<PlusCircleFilled style={{fontSize:"25px"}} onClick={(e) => this.addCom(e)} className="btadd"/>:<div onClick={(e) => this.addCom(e)} className="bttext">添加标签</div>
         }
           {this.state.adding
             ? this.state.rewriting
@@ -177,6 +179,16 @@ class Add extends React.Component {
         </div>
       </div>
     );
+  }
+  toback(){
+    this.setState({
+      rewriting:false
+    })
+  }
+  toclose(){
+    this.setState({
+      adding:false
+    })
   }
   componentWillMount() {
     this.setState({

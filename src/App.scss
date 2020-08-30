@@ -20,12 +20,15 @@
         line-height: 40px;
         padding-left: 15px;
 
-
         .topadd {
           height: 40px;
           float: left;
           position: relative;
-          
+          .bttext{
+            &:hover{
+              color: cyan;
+            }
+          }
           .btadd{
             line-height: 40px;
             &:hover{
@@ -36,13 +39,26 @@
             width: 350px;
             height: 250px;
             box-shadow: 0 0 5px black;
+            transition: all 0.3s;
             .itemhead {
               height: 50px;
               text-align: center;
               line-height: 50px;
-              // background: chocolate;
               font-size: 18px;
               border-bottom: 2px solid black;
+              position: relative;
+              .headbt1{
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+              .headbt2{
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+              }
             }
       
             .iteminput {
@@ -51,12 +67,11 @@
               display: flex;
               justify-content: center;
               align-items: center;
-              // background: chartreuse;
-      
               .itemin {
                 
-                height: 40px;
-                width: 250px;
+                height: 50px;
+                width: 270px;
+                border-radius: 10px;
       
               }
             }
@@ -93,15 +108,19 @@
                 height: 50px;
                 width: 150px;
                 border-radius: 5px;
+
               }
       
               .bt1 {
-                border: 2px solid red;
+                border: 1px solid rgb(240, 135, 49);
               }
       
               .bt2 {
                 border: none;
-                background: cyan;
+                background: rgb(0, 183, 255);
+                &:hover{
+                  color: whitesmoke;
+                }
               }
             }
           }
@@ -110,7 +129,17 @@
             left: 0;
             top: 40px;
             width: 300px;
-            box-shadow: 0 0 5px black;
+            box-shadow: 0 0 3px black;
+            transition: all 0.3s;
+            .btaddtag{
+              height: 40px;
+              width: 280px;
+              margin-left: 10px;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              border-radius: 10px;
+              border: 1px solid grey;
+            }
             .createtag{
               position: relative;
               .itemed {
@@ -148,9 +177,8 @@
             .itemlist {
               height: 40px;
               position: relative;
-
               &:hover {
-                background: grey
+                background: rgb(185, 185, 185)
               }
 
               .item1 {
@@ -233,7 +261,7 @@
 }
 
 .b4 {
-  background: darkorchid;
+  background: rgb(167, 59, 221);
 }
 
 .b5 {
@@ -245,5 +273,5 @@
 }
 
 .b7 {
-  background: khaki;
+  background: rgb(226, 29, 29);
 }
