@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yytFighting.github.io/littlecolone",
+  "homepage": "./",
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
     "@babel/core": "7.9.0",
